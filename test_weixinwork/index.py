@@ -34,7 +34,7 @@ class Index(Base_Page):
         # return Register(self._driver)#self._de????
         # ---------------------------
         #显式等待-----------------------------------------------------------------------------------
-        def add_name_click_enable(x): #x很重要：<selenium.webdriver.chrome.webdriver.WebDriver (session="d0ecc43c2b7389e0f78aabd0deb39cfd")>
+        def add_name_click_enable(x): #x很重要占位用的，这里是一个递归调用：<selenium.webdriver.chrome.webdriver.WebDriver (session="d0ecc43c2b7389e0f78aabd0deb39cfd")>
             elements_len = len(self.finds(By.ID,"corp_name"))
             if elements_len <= 0:
                 self.find('//*[@id="tmp"]/div[1]/a').click()
