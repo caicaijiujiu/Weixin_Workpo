@@ -27,31 +27,22 @@ class Index(Base_Page):
     def goto_register(self):
 
         #点击立即注册
-        #进入到立即注册的po
-        # self.driver.get('https://work.weixin.qq.com/')
-        #self.find('//*[@id="tmp"]/div[1]/a').click()
-        #return Register(self._driver)#self._de????
-
-        def add_name_click_enable():
+        # 进入到立即注册的po
+        # self.driver.get('https://work.weixin.qq.com/')  最开始没有封装的代码，没用了
+        #没有显示等待的代码---------------------------
+        # self.find('//*[@id="tmp"]/div[1]/a').click()
+        # return Register(self._driver)#self._de????
+        # ---------------------------
+        #显式等待-----------------------------------------------------------------------------------
+        def add_name_click_enable(x): #x很重要：<selenium.webdriver.chrome.webdriver.WebDriver (session="d0ecc43c2b7389e0f78aabd0deb39cfd")>
             elements_len = len(self.finds(By.ID,"corp_name"))
             if elements_len <= 0:
                 self.find('//*[@id="tmp"]/div[1]/a').click()
             return elements_len > 0
         self.wait_for_condition(add_name_click_enable)
         return Register(self._driver)
-       #显示等待   ----------------------------------------------------
-        # def corp_name_click_enable():
-        #     length = len(self.finds(By.ID,"corp_name"))
-        #     if length <= 0:
-        #         self.find('//*[@id="tmp"]/div[1]/a').click()
-        #     return length > 0
-        #
-        # self.wait_for_condition(corp_name_click_enable)
-        #
-        # return Register(self._driver)#self._de????
 
-       # 显示等待   ----------------------------------------------------
-
+         # -----------------------------------------------------------------------------------
     def goto_login(self):
         """
         点击企业登录
