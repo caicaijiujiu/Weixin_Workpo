@@ -28,13 +28,15 @@ class Index(Base_Page):
 
         #点击立即注册
         # 进入到立即注册的po
-        # self.driver.get('https://work.weixin.qq.com/')  最开始没有封装的代码，没用了
+        # self.driver.get('https://work.weixin.qq.com/')  最开始没有封装的代码，这个没用了
         #没有显示等待的代码---------------------------
         # self.find('//*[@id="tmp"]/div[1]/a').click()
         # return Register(self._driver)#self._de????
         # ---------------------------
         #显式等待-----------------------------------------------------------------------------------
-        def add_name_click_enable(x): #x很重要占位用的，这里是一个递归调用：<selenium.webdriver.chrome.webdriver.WebDriver (session="d0ecc43c2b7389e0f78aabd0deb39cfd")>
+        def add_name_click_enable(f):
+            #x很重要占位用的，这里是一个递归调用,不一定非用x，用其他的也可以：<selenium.webdriver.chrome.webdriver.WebDriver (session="d0ecc43c2b7389e0f78aabd0deb39cfd")>
+            #现在逻辑有个bug，必须用cmd重新启动浏览器再执行用例，否则就会报错
             elements_len = len(self.finds(By.ID,"corp_name"))
             if elements_len <= 0:
                 self.find('//*[@id="tmp"]/div[1]/a').click()

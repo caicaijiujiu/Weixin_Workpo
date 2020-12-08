@@ -19,6 +19,7 @@ class Base_Page:
             #初始化driver
             chrome_options = Options()
             chrome_options.debugger_address = '127.0.0.1:9222'
+            #cmd中要先启动chrom浏览器 chrome --remote-debugging-port=9222，否则调不起来这里
             self._driver = webdriver.Chrome(options=chrome_options)
             self._driver.implicitly_wait(3)
 

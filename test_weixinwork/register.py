@@ -1,3 +1,5 @@
+import time
+
 from selenium.webdriver.chrome.webdriver import WebDriver
 
 from test_weixinwork.base_page import Base_Page
@@ -12,6 +14,7 @@ class Register(Base_Page):
     def register(self):
         self.find('//*[@id="corp_name"]').send_keys('菜菜九九')
         self.find('//*[@id="corp_industry"]/a').click()
+        time.sleep(2)
         self.find('//*[@id="corp_industry"]/div/table/tbody/tr/td[1]/div[14]').click()
         self.find('//*[@id="corp_industry"]/div/table/tbody/tr/td[2]/div[14]/div[4]/a').click()
         # tags[14].click()
