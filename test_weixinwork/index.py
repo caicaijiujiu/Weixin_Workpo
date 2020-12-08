@@ -36,7 +36,7 @@ class Index(Base_Page):
         #显式等待-----------------------------------------------------------------------------------
         def add_name_click_enable(f):
             #x很重要占位用的，这里是一个递归调用,不一定非用x，用其他的也可以：<selenium.webdriver.chrome.webdriver.WebDriver (session="d0ecc43c2b7389e0f78aabd0deb39cfd")>
-            #现在逻辑有个bug，必须用cmd重新启动浏览器再执行用例，否则就会报错
+            #这个代码运行多次，有少数次数会failed，定位不到表层代码，暂放
             elements_len = len(self.finds(By.ID,"corp_name"))
             if elements_len <= 0:
                 self.find('//*[@id="tmp"]/div[1]/a').click()
