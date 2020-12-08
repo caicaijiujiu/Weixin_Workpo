@@ -29,16 +29,28 @@ class Index(Base_Page):
         #点击立即注册
         #进入到立即注册的po
         # self.driver.get('https://work.weixin.qq.com/')
-        def corp_name_click_enable():
-            length = len(self.finds(By.ID,"corp_name"))
-            if length <= 0:
-                self.find('//*[@id="tmp"]/div[1]/a').click()
-            return length > 0
-
-        self.wait_for_condition(corp_name_click_enable)
         #self.find('//*[@id="tmp"]/div[1]/a').click()
-        return Register(self._driver)#self._de????
+        #return Register(self._driver)#self._de????
 
+        def add_name_click_enable():
+            elements_len = len(self.finds(By.ID,"corp_name"))
+            if elements_len <= 0:
+                self.find('//*[@id="tmp"]/div[1]/a').click()
+            return elements_len > 0
+        self.wait_for_condition(add_name_click_enable)
+        return Register(self._driver)
+       #显示等待   ----------------------------------------------------
+        # def corp_name_click_enable():
+        #     length = len(self.finds(By.ID,"corp_name"))
+        #     if length <= 0:
+        #         self.find('//*[@id="tmp"]/div[1]/a').click()
+        #     return length > 0
+        #
+        # self.wait_for_condition(corp_name_click_enable)
+        #
+        # return Register(self._driver)#self._de????
+
+       # 显示等待   ----------------------------------------------------
 
     def goto_login(self):
         """

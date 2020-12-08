@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Weixin_Workpo.iml" filepath="$PROJECT_DIR$/.idea/Weixin_Workpo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../python_appiumtest/.idea/python_appiumtest.iml" filepath="$PROJECT_DIR$/../python_appiumtest/.idea/python_appiumtest.iml" />
     </modules>
   </component>
 </project>
