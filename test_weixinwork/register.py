@@ -15,6 +15,7 @@ class Register(Base_Page):
         self.find('//*[@id="corp_name"]').send_keys('菜菜九九')
         self.find('//*[@id="corp_industry"]/a').click()
         time.sleep(2)
+        #下面这个元素偶尔会定位不到，需要优化一下，换种定位方式，这个定位方式不稳定
         self.find('//*[@id="corp_industry"]/div/table/tbody/tr/td[1]/div[14]').click()
         self.find('//*[@id="corp_industry"]/div/table/tbody/tr/td[2]/div[14]/div[4]/a').click()
         # tags[14].click()
